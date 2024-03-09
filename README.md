@@ -1,28 +1,37 @@
-# LABORATORIO 5 - SPRING MVC INTRODUCTION
+# LABORATORIO 5 - INTRODUCCIÓN A SPRING MVC
 
-#### INTRODUCCIÓN A PROYECTOS WEB
+## INTRODUCCIÓN A PROYECTOS WEB
 
-### PARTE I. - JUGANDO A SER UN CLIENTE HTTP
-Usaremos las siguientes aplicaciones como cliente HTTP
+### PARTE I - JUGANDO A SER UN CLIENTE HTTP
+
+Para esta parte del laboratorio, usaremos las siguientes aplicaciones como cliente HTTP:
 - Postman
 - Telnet
 
-Abre la aplicación Postman, lo usaremos para hacer una solicitud a un servidor HTTP, al abrirlo indentifica qué controles de Postman corresponde a los elementos de entrada y salida de un servicio HTTP:
+Abre la aplicación Postman y utilizaremos sus funcionalidades para realizar solicitudes a un servidor HTTP. Al abrir Postman, identifica qué controles corresponden a los elementos de entrada y salida de un servicio HTTP.
 
-<img width="803" alt="image" src="https://github.com/PDSW-ECI/labs/assets/4140058/49acba5d-2f26-4515-96e9-af7aa50f89d4">
+![Postman Controls](https://github.com/PDSW-ECI/labs/assets/4140058/49acba5d-2f26-4515-96e9-af7aa50f89d4)
 
-Has un request GET a la URL https://www.escuelaing.edu.co/es/ y verifica el body de respuesta en las opciones Pretty, Raw, Preview.
+Realiza un request GET a la URL https://www.escuelaing.edu.co/es/ y verifica el cuerpo de respuesta en las opciones Pretty, Raw y Preview.
 
-Ahora has otro request GET al recurso https://dummyjson.com/todos, nuevamente verifica el body en varias opciones.
+Luego, realiza otro request GET al recurso https://dummyjson.com/todos y nuevamente verifica el cuerpo de respuesta en varias opciones.
 
 Responde las siguientes preguntas:
-- ¿Qué pasa si no envío el método correcto?
-- ¿Qué pasa si al body response HTML lo fuerzo a leerse como JSON?
-- ¿Por qué el preview de HTML no se ve igual a cuando accedo a la URL en un navegador web?
-- ¿Qué pasa si le envías un body a una solicitud GET?
+- **¿Qué pasa si no envío el método correcto?**
+  Si no se envía el método correcto, el servidor puede responder con un código de estado HTTP 405 (Método no permitido), indicando que el método de solicitud no es compatible con el recurso.
 
-Como parte del laboratorio en casa (ya que en los equipos del laboratorio está bloqueado) has los dos request anteriores pero ahora usando la herramienta Telnet sobre el puerto 80.
-Telnet soporta HTTP y no HTTPS, entonces ¿Qué significa la respuesta 301 cuándo usas telnet en el puerto 80?. Si quieres obtener una respuesta exitosa, podrías hacer solicitudes al servicio http://example.com/ 
+- **¿Qué pasa si intento leer el cuerpo de respuesta HTML como JSON?**
+  Si se intenta leer el cuerpo de respuesta HTML como JSON, es probable que ocurra un error de parseo ya que el contenido HTML no está en formato JSON. El resultado sería un error de parseo y el cuerpo de respuesta no sería legible como JSON.
+
+- **¿Por qué el preview de HTML no se ve igual que cuando accedo a la URL en un navegador web?**
+  El preview de HTML proporcionado por herramientas como Postman puede no representar completamente la experiencia de visualización en un navegador web real. Esto puede deberse a diferencias en el procesamiento y renderizado de HTML entre la vista previa en Postman y un navegador web real.
+
+- **¿Qué ocurre si envío un cuerpo en una solicitud GET?**
+  Según la especificación HTTP, no se espera que una solicitud GET tenga un cuerpo. Si se envía un cuerpo en una solicitud GET, es posible que algunos servidores lo ignoren, mientras que otros pueden responder con un código de estado 400 (Solicitud incorrecta) indicando que la solicitud es inválida.
+
+Además, como parte del laboratorio en casa (ya que en los equipos del laboratorio está bloqueado), realiza los mismos dos requests anteriores utilizando la herramienta Telnet sobre el puerto 80.
+
+Ten en cuenta que Telnet solo soporta HTTP y no HTTPS. Entonces, ¿qué significa la respuesta 301 cuando usas Telnet en el puerto 80? Para obtener una respuesta exitosa, podrías hacer solicitudes al servicio http://example.com/.
 
 ### PARTE II. - CLIENT SIDE RENDERING CON REACT
 Para iniciar verifica que tengas alguna de estas herramientas:
