@@ -2,7 +2,10 @@
 
 ## INTRODUCCIÓN A PROYECTOS WEB
 
+### INTEGRANTES: MILTON GUTIERREZ Y SEBASTIAN SOSA
+
 ### PARTE I - JUGANDO A SER UN CLIENTE HTTP
+
 
 Para esta parte del laboratorio, usaremos las siguientes aplicaciones como cliente HTTP:
 - Postman
@@ -114,7 +117,9 @@ Después de terminar el aprendizaje, analicemos:
     - `@GetMapping`: Anotación utilizada para asignar solicitudes HTTP GET a métodos de controlador. La principal diferencia entre ellas está en su definición y en cómo se utilizan para asignar solicitudes HTTP a métodos de controlador.
 
 - **Ahora, realiza el request GET http://localhost:8080/greeting usando Postman, y revisa si el body de la respuesta es igual a alguno de los archivos del proyecto. ¿Qué significa eso?**
-    - Si el cuerpo de la respuesta es igual a algún archivo del proyecto, significa que es un recurso web estático, ya que no ha habido procesamiento dinámico para generar la respuesta.
+  ![image](https://github.com/jhonSsosa/cvds_lab5/assets/112003191/61e09115-ee84-4437-a249-f41a912fcd31)
+
+    - Ambos son recursos web dinámicos. Esto se debe a que ambos cuerpos contienen etiquetas Thymeleaf (th:text), lo que indica que hay procesamiento dinámico involucrado en la generación del contenido de la páginapara generar la respuesta.
 
 ### PARTE IV. - APLICACIÓN MVC PARA CONSUMO DE SERVICIO RESTful
 Usando la arquitectura MVC del punto anterior (el proyecto anterior), realice una aplicación simple qué permita navegar gráficamente sobre esta API
@@ -122,7 +127,9 @@ https://jsonplaceholder.typicode.com/todos/1, puede guiarse de tutoriales como h
 
 Luego de terminada esta parte responda:
 - ¿Qué es RESTful?
+  - RESTful, o Representational State Transfer, es un estilo arquitectónico para diseñar sistemas de software distribuidos, especialmente en entornos de red. Se basa en un conjunto de principios que describen cómo los recursos son definidos y direccionados a través de URI (Uniform Resource Identifiers), y cómo pueden ser manipulados usando un conjunto uniforme de operaciones sin estado.  
 - Si utilizo un framework como [Boostrap CSS](https://getbootstrap.com/) para qué el apartado gráfico se vea más profesional, ¿en qué capa se haría su uso?
+  - En el contexto de un proyecto web que utiliza Bootstrap para mejorar su apariencia visual, el uso de Bootstrap se realizaría principalmente en la capa de presentación. Esto implica aplicar las clases y estilos de Bootstrap directamente a los elementos HTML generados dinámicamente por el servidor o renderizados en el cliente para mejorar el aspecto visual y la experiencia del usuario.  
 
 ### PARTE V. - APLICACIÓN MVC JUEGO
 ¡Llego la hora del reto! Teniendo las bases del uso del framework, cree una nueva ruta, por ejemplo `/guess`, y agrege formulario básico con un campo llamado "número" (guía de como crear formularios HTML https://www.w3schools.com/html/)
@@ -133,10 +140,13 @@ se reduce en $10.000, como en los juegos de apuesta, es natural qué quede en sa
 2. El número a adivinar debe ser generado en cada intento y comparado con el número qué el usuario está insertando, es un número de 1 a 10.
 3. Debe existir un botón de reset, qué permita al jugador iniciar de nuevo.
 4. La capa de controlador debe procer el número del usuario mediante método `POST`.
+![image](https://github.com/jhonSsosa/cvds_lab5/assets/112003191/f0a4c303-d1e2-456b-a34b-43763bce903e)
 
 Analice las siguientes situaciones:
 - ¿Qué pasa si abro el sitio de juegos en dos navegadores difententes?
+  - Si abrimos el sitio de juegos en dos navegadores diferentes y cada uno juega de manera independiente, los saldos se manejarán de forma independiente para cada sesión de juego. 
 - Si quisiera qué a cada jugador le aparecieran independientemente sus respectivos saldos. ¿Qué habría que hacer?
+  - Para garantizar que cada jugador vea su propio saldo independientemente de otras sesiones de juego, necesitarías implementar un sistema de manejo de sesiones en tu aplicación. Esto implica asignar un identificador único a cada sesión de juego (por ejemplo, un identificador de sesión generado aleatoriamente o un identificador de usuario único), y luego asociar el saldo de cada jugador con su identificador de sesión o identificador de usuario.   
 
 ## ENTREGA
 - En un README.md colocar lo siguiente:
