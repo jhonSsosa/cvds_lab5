@@ -93,16 +93,28 @@ Los dos fragmentos de código HTML que se generaron son similares mas no iguales
 Por lo tanto, en ambos casos, la aplicación podría considerarse estática, pero el segundo fragmento podría involucrar un servidor que realiza cierto procesamiento dinámico antes de servir los archivos estáticos.
 
 ### PARTE III. - HACIENDO UNA APLICACIÓN WEB DINÁMICA USANDO EL PATRÓN MVC
-En este ejercicio, va a implementar una aplicación Web muy básica, haciendo uso de spring MVC.
+En este ejercicio, vamos a implementar una aplicación web muy básica utilizando Spring MVC.
 
-Para esto usaremos la documentación oficial de Spring con que que aprenderemos las funciones básicas de este framework https://spring.io/guides/gs/serving-web-content/
+Para esto, usaremos la documentación oficial de Spring para aprender las funciones básicas de este framework [aquí](https://spring.io/guides/gs/serving-web-content/).
 
-Después de terminar el aprendizaje analice:
-- ¿Por qué MVC obtiene ese nombre? (puede apoyarse de https://www.javatpoint.com/spring-mvc-tutorial) 
-- ¿Cuáles son las ventajas de usar MVC?
-- ¿Qué diferencia tiene la estructura de directorios de este proyecto comparado con las de proyectos pasados (con solo maven y java EE)?
-- ¿Qué anotaciones usaste y cuál es la diferencia entre ellas?
-- Ahora, haz el request GET http://localhost:8080/greeting usando Postman, y revisa si el body de la respuesta es igual a alguno de los archivos del proyecto. Significa eso que es un recurso web dinámico o estático? (FALTA)
+Después de terminar el aprendizaje, analicemos:
+
+- **¿Por qué MVC obtiene ese nombre?** MVC significa Modelo-Vista-Controlador. Este patrón de diseño se utiliza en el desarrollo de software para separar la lógica de presentación de la lógica de negocio. [Más información](https://www.javatpoint.com/spring-mvc-tutorial)
+
+- **¿Cuáles son las ventajas de usar MVC?**
+    - Separación de preocupaciones: Divide la aplicación en componentes que se ocupan de tareas específicas, lo que facilita el mantenimiento y la escalabilidad.
+    - Reutilización de código: Al separar la lógica de presentación de la lógica general, se puede reutilizar el código en diferentes partes de la aplicación.
+    - Facilidad para realizar pruebas: La separación de las diferentes capas de la aplicación permite distribuir más fácilmente pruebas unitarias y de integración.
+
+- **¿Qué diferencia tiene la estructura de directorios de este proyecto comparado con las de proyectos pasados (con solo Maven y Java EE)?**
+    - En el proyecto de Spring MVC, la estructura de directorios típicamente sigue las convenciones de Spring Boot.
+    - En comparación con un proyecto Maven, la estructura de directorios en un proyecto de Spring MVC puede tener un directorio adicional llamado webapp, que contiene recursos web estáticos (como archivos HTML, CSS, JavaScript).
+
+- **¿Qué anotaciones usaste y cuál es la diferencia entre ellas?**
+    - `@GetMapping`: Anotación utilizada para asignar solicitudes HTTP GET a métodos de controlador. La principal diferencia entre ellas está en su definición y en cómo se utilizan para asignar solicitudes HTTP a métodos de controlador.
+
+- **Ahora, realiza el request GET http://localhost:8080/greeting usando Postman, y revisa si el body de la respuesta es igual a alguno de los archivos del proyecto. ¿Qué significa eso?**
+    - Si el cuerpo de la respuesta es igual a algún archivo del proyecto, significa que es un recurso web estático, ya que no ha habido procesamiento dinámico para generar la respuesta.
 
 ### PARTE IV. - APLICACIÓN MVC PARA CONSUMO DE SERVICIO RESTful
 Usando la arquitectura MVC del punto anterior (el proyecto anterior), realice una aplicación simple qué permita navegar gráficamente sobre esta API
