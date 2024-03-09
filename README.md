@@ -44,29 +44,53 @@ La siguiente misión es ejecutar una aplicación react localmente:
 
 - ¿Qué hace cada uno de los archivos en la aplicación?
 ```
+
+markdown
+Copy code
+### PARTE II. - CLIENT SIDE RENDERING CON REACT
+
+Para iniciar, verifica que tengas alguna de estas herramientas:
+- NPM o YARN
+
+Verificando en terminal sería `$ npm --version`
+
+La siguiente misión es ejecutar una aplicación React localmente:
+
+- Abre la aplicación https://codesandbox.io/s/react-js-simple-calculator-pefmr, loguéate con GitHub y juega cambiando los parámetros como colores y duplicando las líneas del archivo App.js con tags como `<ResultComponent ...>` en la función render.
+
+- ¿Qué hace cada uno de los archivos en la aplicación?
+
 .
-├── package.json
+├── package.json: Se utiliza para definir las dependencias del proyecto React y configurar scripts de inicio y compilación.
 ├── public
-│   └── index.html
+│ └── index.html: Este archivo es la página HTML principal de la aplicación React. Es el punto de entrada de la aplicación y contiene el nodo raíz donde se montará la aplicación React.
 └── src
-    ├── App.js
-    ├── components
-    │   ├── KeyPadComponent.js
-    │   └── ResultComponent.js
-    ├── index.js
-    └── styles.css
+├── App.js: Define la estructura de la aplicación y contiene la lógica principal. En este caso, es una calculadora simple que renderiza dos componentes secundarios: KeyPadComponent y ResultComponent.
+├── components
+│ ├── KeyPadComponent.js: Es responsable de renderizar los botones de la calculadora y manejar los eventos de clic en esos botones.
+│ └── ResultComponent.js: Es responsable de renderizar el resultado de las operaciones de la calculadora y mostrarlo al usuario.
+├── index.js: Este archivo es el punto de entrada de la aplicación React. Se encarga de renderizar el componente principal (App.js) en el nodo raíz del DOM, generalmente un elemento con el id "root".
+└── styles.css: Este archivo contiene estilos CSS para la aplicación React. Define estilos para los componentes y elementos de la interfaz de usuario, como colores, tamaños de fuente, márgenes, etc.
 ```
 
 - Después de haber visto los cambios, vuelve a abrir la URL original https://codesandbox.io/s/react-js-simple-calculator-pefmr y sigue los siguientes pasos:
 1) Descargar código en un Zip
 2) Descomprimir el Zip en la carpeta de proyectos de software, (en ciertos PC solo funciona 7-Zip)
 3) Abrir una terminal de Git Bash en la carpeta descomprimida
-4) Instalar las dependencias con `npm install`
-5) Iniciar la aplicación con `npm start`, en algunos computadores con versiones antiguas de nodejs hay que agregar `NODE_OPTIONS=--openssl-legacy-provider npm run start`
-6) Si te sale el Firewall dale click en cancelar
-7) Abrir la ruta http://localhost:3000/ en un navegador web como Firefox o Google Chrome
+5) Instalar las dependencias con `npm install`
+   ![image](https://github.com/jhonSsosa/cvds_lab5/assets/112003191/5823af4a-afe9-40a3-9569-d44bd141832f)
+7) Iniciar la aplicación con `npm start`, en algunos computadores con versiones antiguas de nodejs hay que agregar `NODE_OPTIONS=--openssl-legacy-provider npm run start`
+   ![image](https://github.com/jhonSsosa/cvds_lab5/assets/112003191/b4f5f332-6813-4415-9693-40208c95dac3)
+9) Si te sale el Firewall dale click en cancelar
+10) Abrir la ruta http://localhost:3000/ en un navegador web como Firefox o Google Chrome
 
-Ahora, has el request GET http://localhost:3000/ usando Postman, y revisa si el body de la respuesta es igual a alguno de los archivos del proyecto. Significa eso que es un recurso web dinámico o estático?
+![image](https://github.com/jhonSsosa/cvds_lab5/assets/112003191/fbf45d2f-f0c7-47f7-9ac7-314b2541a5f8)
+
+Has un request GET a la URL http://localhost:3000/ usando Postman, y revisa si el body de la respuesta es igual a alguno de los archivos del proyecto. Significa eso que es un recurso web dinámico o estático?
+Los dos fragmentos de código HTML que se generaron son similares mas no iguales, pero tienen algunas diferencias importantes que pueden afectar cómo se sirve la aplicación web, de tal manera que:
+- El primer fragmento de código sugiere que la aplicación se sirve de forma estática.
+- El segundo fragmento de código también sugiere que la aplicación se sirve de forma estática, pero con procesamiento dinámico para servir los archivos JavaScript generados.
+Por lo tanto, en ambos casos, la aplicación podría considerarse estática, pero el segundo fragmento podría involucrar un servidor que realiza cierto procesamiento dinámico antes de servir los archivos estáticos.
 
 ### PARTE III. - HACIENDO UNA APLICACIÓN WEB DINÁMICA USANDO EL PATRÓN MVC
 En este ejercicio, va a implementar una aplicación Web muy básica, haciendo uso de spring MVC.
